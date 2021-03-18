@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 
 $EmailFrom = $_POST['email']; 
 $EmailTo = "badrimeryem6@gmail.com";
-$Prenom = $_POST['prenom'];
+
 $Nom = $_POST['nom']; 
 $Email = $_POST['email'];
 $Subject = "sujet";
@@ -18,9 +18,7 @@ if (!$validationOK) {
  
 // mise en form mail
 $Body = "";
-$Body .= "Prenom: ";
-$Body .= $Prenom;
-$Body .= "\n";
+
 $Body .= "Nom: ";
 $Body .= $Nom;
 $Body .= "\n";
