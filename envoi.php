@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-
+var_dump($_POST);
 $EmailFrom = $_POST['email']; 
 $EmailTo = "badrimeryem6@gmail.com";
 
