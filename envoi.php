@@ -1,24 +1,48 @@
- <?php 
-//Pour définir chaque input du formulaire, ajouter le signe de dollar devant
+<?php
+error_reporting(E_ALL);
 
-$msg = "Nom:\t$nom\n";
-$msg .= "E-Mail:\t$email\n";
-$msg .= "Message:\t$message\n\n";
-//Pourait continuer ainsi jusqu'à la fin du formulaire
-
-$recipient = "meryembadri6@gmail.com";
-$subject = "Formulaire";
-
-$mailheaders = "From: Mon test de formulaire<> \n";
-$mailheaders .= "Reply-To: $email\n\n";
-
-mail($recipient, $subject, $msg, $mailheaders);
-
-echo "<HTML><HEAD>";
-echo "<TITLE>Formulaire envoyer!</TITLE></HEAD><BODY>";
-echo "<H1 align=center>Merci, $nom </H1>";
-echo "<P align=center>";
-echo "Votre formulaire à bien été envoyé !</P>";
-echo "</BODY></HTML>";
+$EmailFrom = $_POST['email']; 
+$EmailTo = "badrimeryem6@gmail.com";
+$Prenom = $_POST['prenom'];
+$Nom = $_POST['nom']; 
+$Email = $_POST['email'];
+$Subject = "sujet";
+$Message = $_POST['message']; 
+ 
+// validation
+$validationOK=true;
+if (!$validationOK) {
+  echo "Error";
+  exit;
+}
+ 
+// mise en form mail
+$Body = "";
+$Body .= "Prenom: ";
+$Body .= $Prenom;
+$Body .= "\n";
+$Body .= "Nom: ";
+$Body .= $Nom;
+$Body .= "\n";
+$Body .= "Email: ";
+$Body .= $Email;
+$Body .= "\n";
+$Body .= "Sujet: ";
+$Body .= $Sujet;
+$Body .= "\n";
+$Body .= "Message: ";
+$Body .= $Message;
+$Body .= "\n";
+ 
+// envoi email 
+$success = mail($EmailTo, $Subject, $Body, "From: <$EmailFrom>");
+	
+// message success-error
+if ($success){
+  echo "Votre message à bien été envoyé.";
+}
+else{
+  echo "Une erreur s'est produite à l'envoi de votre message.";
+}
 
 ?>
