@@ -6,7 +6,7 @@ $msg .= "E-Mail:\t$email\n";
 $msg .= "Message:\t$message\n\n";
 //Pourait continuer ainsi jusqu'à la fin du formulaire
 
-$recipient = "meryem.badri@etu.uca.fr";
+$recipient = "meryembadri6@gmail.com";
 $subject = "Formulaire";
 
 $mailheaders = "From: Mon test de formulaire<> \n";
